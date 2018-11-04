@@ -44,7 +44,8 @@ class Analisis_respon extends CI_Controller {
 
 	public function index($p=1, $o=0)
 	{
-		if (empty($this->analisis_respon_model->get_periode()))
+		$getperiode = $this->analisis_respon_model->get_periode();
+		if (empty($getperiode))
 		{
 			$_SESSION['success'] = -1;
 			$_SESSION['error_msg'] = 'Tidak ada periode aktif. Entri data respon harus ada periode aktif.';
